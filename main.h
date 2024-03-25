@@ -10,14 +10,15 @@
 typedef struct format_types
 {
 	char *op;
-	void (*f)(va_list args);
+	int (*f)(va_list args);
 } format_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 
-void _print_char(va_list args);
-void _print_integer(va_list args);
-void _print_string(va_list args);
-void _print_perc(va_list args);
+int _print_char(va_list args);
+int _print_integer(va_list args);
+int __print_integer(int nb, int count);
+int _print_string(va_list args);
+int _print_perc(va_list args);
 #endif

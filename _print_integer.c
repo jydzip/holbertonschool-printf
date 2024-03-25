@@ -1,8 +1,18 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
-void _print_integer(va_list args)
+int _print_integer(va_list args)
 {
-	_putchar(va_arg(args, int) + '0');
+	int nb = va_arg(args, int);
+	int count = __print_integer(nb, 0);
+	return (count);
+}
+
+int __print_integer(int nb, int count)
+{
+	if (nb <= 0)
+		return (count);
+	count = __print_integer(nb / 10, count + 1);
+	_putchar((nb % 10) + '0');
+	return (count);
 }
