@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, ii, inc;
+	int i = 0, ii, inc, count = 0;
 	char c1, c2;
 	va_list args;
 
@@ -25,12 +25,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
+		int printed = 0;
+
 		c1 = format[i];
 		inc = 1;
 
 		if (c1 == '%')
 		{
-			inc = 2;
 			c2 = format[i + 1];
 
 			for (ii = 0; ii < 5; ii++)
@@ -38,16 +39,22 @@ int _printf(const char *format, ...)
 				if (ftypes[ii].op[0] == c2)
 				{
 					ftypes[ii].f(args);
+					count += 1;
+					inc = 2;
+
+					printed = 1;
+					break;
 				}
 			}
 		}
-		else
+		if (printed == 0)
 		{
+			count += 1;
 			_putchar(c1);
 		}
 
 		i += inc;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
