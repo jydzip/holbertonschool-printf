@@ -3,8 +3,8 @@
 	
 	int _putchar(char c);
 	int _printf(const char *format, ...);
-        void print_char(char c);
-        void print_integer(int i);
-        void print_string(char c);
-        void print_perc(char c);
+        void _print_char(va_list args);
+        void _print_integer(va_list args);
+        void _print_string(va_list args);
+        void _print_perc(va_list args);
 #endif
