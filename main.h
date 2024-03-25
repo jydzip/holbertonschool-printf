@@ -10,7 +10,7 @@
 typedef struct format_types
 {
 	char *op;
-	int (*f)(va_list args);
+	void (*f)(va_list args);
 } format_t;
 
 int _putchar(char c);
