@@ -38,8 +38,7 @@ int _printf(const char *format, ...)
 			{
 				if (ftypes[ii].op[0] == c2)
 				{
-					ftypes[ii].f(args);
-					count += 1;
+					count += ftypes[ii].f(args);
 					inc = 2;
 
 					printed = 1;

@@ -2,8 +2,9 @@
 #include <stdarg.h>
 #include "main.h"
 
-void _print_perc(va_list args)
+int _print_perc(va_list args)
 {
 	(void)args;
 	_putchar('%');
+	return (1);
 }
