@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * _printf - ...
@@ -19,9 +20,9 @@ int _printf(const char *format, ...)
 		{"d", _print_integer},
 		{"%", _print_perc},
 		{NULL, NULL}
-	}
+	};
 	
-	va_start(args);
+	va_start(args, format);
 	while (format[i] != '\0')
 	{
 		c1 = format[i];
@@ -34,16 +35,20 @@ int _printf(const char *format, ...)
 
 			for (ii = 0; ii < 5; ii++)
 			{
-				if (ftypes[ii].op == c2)
+				if (ftypes[ii].op[0] == c2)
 				{
 					ftypes[ii].f(args);
 				}
 			}
+		}
+		else
+		{
+			_putchar(c1);
 		}
 
 		i += inc;
 	}
 	va_end(args);
 	_putchar('\n');
-	return (0);  // TODO: Create variable int related
+	return (0);
 }
