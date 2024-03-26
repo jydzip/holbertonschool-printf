@@ -1,42 +1,48 @@
-.Dt _printf 1
-.Os Holberton
-.Sh NAME
-.Nm _printf
-.Nd Print formatted output to stdout.
-.Sh SYNOPSIS
-.Nm
-.Op Ar format
-.Ar arg0
-arg2 ...
-.Sh DESCRIPTION
-The '_printf' function is used to print formatted output to the standard output (stdout) stream.
-.Pp
-
+.TH _printf 3 "26 February 2024" "0.5" "Man page"
+.SH NAME
+.B _printf
+- Print formatted output to stdout.
+.SH SYNOPSIS
+int _printf(const char *format, ...);
+.SH DESCRIPTION
+The _printf() function is used to print formatted output to the standard output (stdout) stream.
 It formats and prints the optional arguments according to the specified format string.
-.Sh CONVERSION SPECIFIERS
-.Bl -tag -width -indent
-.It %c
-Character format
-.It %s
-String format
-.It %i
-Integer format
-.It %d
-Decimal format
+.SH CONVERSION SPECIFIERS
+%c - Character format
+.sp
+%s - String format
+.sp
+%i - Integer format
+.sp
+%d - Decimal format
 .Pp
-.Sh RETURN VALUE
+.SH RETURN VALUE
 .Bl
 Upon successful completion, '_printf' returns the number of characters printed (excluding the null byte used to end output to strings).
-
 If an error occurs, a negative value is returned.
-.Sh EXAMPLES
-.Bl -tag -width -indent
-.It %c
+.SH EXAMPLES
+To print character:
+.sp
+.RS
 _printf("%c\n", 'A');
-.It %s
+.RE
+.sp
+To print string:
+.sp
+.RS
 _printf("%s\n", "Hello");
-.It %i
+.RE
+.sp
+To print integer:
+.sp
+.RS
 _printf("%i\n", 10);
-.It %d
-_printf("%d\n", 25);
-.Pp
+.RE
+.sp
+To print decimal:
+.sp
+.RS
+_printf("%d\n", 10);
+.RE
+.SH SEE ALSO
+.I printf(3)
