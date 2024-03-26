@@ -10,12 +10,12 @@
 int _print_integer(va_list args)
 {
 	int nb = va_arg(args, int);
-	int count = 1;
+	int count = 0;
 
 	if (!nb)
 	{
 		_putchar('0');
-		nb = _abs(nb);
+		count++;
 	}
 	else
 	{
@@ -23,8 +23,9 @@ int _print_integer(va_list args)
 		{
 			_putchar('-');
 			nb = _abs(nb);
+			count++;
 		}
-		count = __print_integer(nb, 0);
+		count += __print_integer(nb, 0);
 	}
 	return (count);
 
