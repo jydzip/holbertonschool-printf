@@ -19,6 +19,7 @@ int _printf(const char *format, ...)
 		{"i", _print_integer},
 		{"d", _print_integer},
 		{"%", _print_perc},
+		{"u", _print_unsigned_integer},
 		{NULL, NULL}
 	};
 	
@@ -34,7 +35,7 @@ int _printf(const char *format, ...)
 		{
 			c2 = format[i + 1];
 
-			for (ii = 0; ii < 5; ii++)
+			for (ii = 0; ii < 6; ii++)
 			{
 				if (ftypes[ii].op[0] == c2)
 				{

@@ -22,4 +22,6 @@ int _print_integer(va_list args);
 int __print_integer(int nb, int count);
 int _print_string(va_list args);
 int _print_perc(va_list args);
+int _print_unsigned_integer(va_list args);
+int __print_unsigned_integer(unsigned int nb, int count);
 #endif
