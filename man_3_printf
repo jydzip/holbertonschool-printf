@@ -1,0 +1,34 @@
+_printf:
+
+Print formatted output to stdout
+
+SYNOPSIS
+
+int _printf(const char *format, ...);
+
+DESCRIPTION
+
+The '_printf' function is used to print formatted output to the standard output (stdout) stream. It formats and prints the optional arguments according to the specified format string.
+
+CONVERSION SPECIFIERS
+
+%d, %i: Signed decimal integer
+
+RETURN VALUE
+
+Upon successful completion, '_printf' returns the number of characters printed (excluding the null byte used to end output to strings). If an error occurs, a negative value is returned.
+
+EXAMPLES
+
+int main()
+{
+        int i = 10;
+        char a = 'A';
+        char str = "Hello World";
+
+        _printf("%d\n", i);
+        _printf("%c\n", a);
+        _printf("%s\n", str);
+
+        return (0);
+
