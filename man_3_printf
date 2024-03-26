@@ -1,37 +1,42 @@
-_printf(1)
-==========
+.Dt _printf 1
+.Os Holberton
+.Sh NAME
+.Nm _printf
+.Nd Print formatted output to stdout.
+.Sh SYNOPSIS
+.Nm
+.Op Ar format
+.Ar arg0
+arg2 ...
+.Sh DESCRIPTION
+The '_printf' function is used to print formatted output to the standard output (stdout) stream.
+.Pp
 
-NAME
-----
-_printf - print formatted output to stdout
+It formats and prints the optional arguments according to the specified format string.
+.Sh CONVERSION SPECIFIERS
+.Bl -tag -width -indent
+.It %c
+Character format
+.It %s
+String format
+.It %i
+Integer format
+.It %d
+Decimal format
+.Pp
+.Sh RETURN VALUE
+.Bl
+Upon successful completion, '_printf' returns the number of characters printed (excluding the null byte used to end output to strings).
 
-SYNOPSIS
---------
-int _printf(const char *format, ...);
-
-DESCRIPTION
------------
-The '_printf' function is used to print formatted output to the standard output (stdout) stream. It formats and prints the optional arguments according to the specified format string.
-
-CONVERSION SPECIFIERS
----------------------
-%d, %i: Signed decimal integer
-
-RETURN VALUE
-------------
-Upon successful completion, '_printf' returns the number of characters printed (excluding the null byte used to end output to strings). If an error occurs, a negative value is returned.
-
-EXAMPLES
---------
-int main()
-{
-        int i = 10;
-        char a = 'A';
-        char str = "Hello World";
-
-        _printf("%d\n", i);
-        _printf("%c\n", a);
-        _printf("%s\n", str);
-
-        return (0);
-}
+If an error occurs, a negative value is returned.
+.Sh EXAMPLES
+.Bl -tag -width -indent
+.It %c
+_printf("%c\n", 'A');
+.It %s
+_printf("%s\n", "Hello");
+.It %i
+_printf("%i\n", 10);
+.It %d
+_printf("%d\n", 25);
+.Pp
