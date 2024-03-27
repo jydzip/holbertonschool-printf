@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 		{
 			c2 = format[i + 1];
 
+			if (c2 == '\0')
+			{
+				va_end(args);
+				return (-1);
+			}
+
 			for (ii = 0; ii < 6; ii++)
 			{
 				if (ftypes[ii].op[0] == c2)
