@@ -36,7 +36,6 @@ int _printf(const char *format, ...)
 				count += f(args);
 				inc = 2;
 				printed = 1;
-				break;
 			}
 		}
 		if (printed == 0)
