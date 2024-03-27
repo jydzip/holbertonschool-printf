@@ -15,6 +15,7 @@ typedef struct format_types
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int (*get_format_function(char c2))(va_list);
 int _abs(int c);
 
 int _print_char(va_list args);
