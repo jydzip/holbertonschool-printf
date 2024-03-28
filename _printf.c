@@ -64,10 +64,11 @@ int (*get_format_function(char c2))(va_list)
 		{"d", _print_integer},
 		{"%", _print_perc},
 		{"u", _print_unsigned_integer},
+		{"b", _print_binary},
 		{NULL, NULL}
 	};
 
-	for (ii = 0; ii < 6; ii++)
+	for (ii = 0; ii < 7; ii++)
 	{
 		if (ftypes[ii].op[0] == c2)
 		{
