@@ -9,16 +9,20 @@
 
 int _print_integer(va_list args)
 {
-	int nb = va_arg(args, int);
-	int count = 0, length = 0, temp, i, j;
+	int nb = va_arg(args, int), count = 0, length = 0, temp, i, j;
 
+	if (nb == 0)
+	{
+		_putchar('0');
+		count++;
+		return (count);
+	}
 	if (nb < 0)
 	{
 		_putchar('-');
 		nb = -nb;
 		count++;
 	}
-
 	temp = nb;
 	while (temp != 0)
 	{
