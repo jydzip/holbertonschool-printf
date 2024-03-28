@@ -10,39 +10,39 @@
 int _print_integer(va_list args)
 {
 	int nb = va_arg(args, int);
-	int count = 0;
+	int count = 0, length = 0, temp, i, j;
 
-	if (!nb)
+	if (nb < 0)
+	{
+		_putchar('-');
+		nb = -nb;
+		count++;
+	}
+
+	temp = nb;
+	while (temp != 0)
+	{
+		temp /= 10;
+		length++;
+	}
+	if (length == 0)
 	{
 		_putchar('0');
 		count++;
 	}
 	else
 	{
-		if (nb < 0)
+		for (i = 1; i <= length; i++)
 		{
-			_putchar('-');
-			nb = -nb;
+			int divisor = 1;
+
+			for (j = 1; j < length - i + 1; j++)
+			{
+				divisor *= 10;
+			}
+			_putchar(((nb / divisor) % 10) + '0');
 			count++;
 		}
-		count += __print_integer(nb, 0);
 	}
-	return (count);
-
-}
-
-/**
- * __print_integer - recursion of the first function
- *@nb: number
- *@count: number to count
- *Return: count
- */
-
-int __print_integer(int nb, int count)
-{
-	if (nb <= 0)
-		return (count);
-	count = __print_integer(nb / 10, count + 1);
-	_putchar((nb % 10) + '0');
 	return (count);
 }
