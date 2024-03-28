@@ -1,4 +1,7 @@
 #include <stdarg.h>
+#include <limits.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -9,44 +12,38 @@
 
 int _print_integer(va_list args)
 {
-	int nb = va_arg(args, int), count = 0, length = 0, temp, i, j;
+	int count = 0;
+	int nb = va_arg(args, int), i, j;
+	char buffer[64];
+	unsigned int n;
 
-	if (nb == 0)
+	if (!nb)
 	{
 		_putchar('0');
-		count++;
-		return (count);
+		return (1);
 	}
 	if (nb < 0)
 	{
 		_putchar('-');
-		nb = -nb;
-		count++;
-	}
-	temp = nb;
-	while (temp != 0)
-	{
-		temp /= 10;
-		length++;
-	}
-	if (length == 0)
-	{
-		_putchar('0');
+		n = -nb;
 		count++;
 	}
 	else
 	{
-		for (i = 1; i <= length; i++)
-		{
-			int divisor = 1;
+		n = nb;
+	}
 
-			for (j = 1; j < length - i + 1; j++)
-			{
-				divisor *= 10;
-			}
-			_putchar(((nb / divisor) % 10) + '0');
-			count++;
-		}
+	i = 0;
+	while (n != 0)
+	{
+		buffer[i++] = (n % 10) + '0';
+		n /= 10;
+	}
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(buffer[j]);
+		count++;
 	}
 	return (count);
 }
