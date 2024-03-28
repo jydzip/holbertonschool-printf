@@ -22,7 +22,7 @@ int _print_integer(va_list args)
 		if (nb < 0)
 		{
 			_putchar('-');
-			nb = _abs(nb);
+			nb = -nb;
 			count++;
 		}
 		count += __print_integer(nb, 0);
@@ -45,14 +45,4 @@ int __print_integer(int nb, int count)
 	count = __print_integer(nb / 10, count + 1);
 	_putchar((nb % 10) + '0');
 	return (count);
-}
-
-/**
- *_abs - Convert integer to absolute value
- *@c: The character to convert
- *Return: (int) result absolute
- */
-int _abs(int c)
-{
-	return (c * ((c > 0) - (c < 0)));
 }
