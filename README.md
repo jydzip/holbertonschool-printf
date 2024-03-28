@@ -11,11 +11,11 @@ int _print_integer(va_list args): print an integer
 int _print_string(va_list args): print a string
 int _print_perc(va_list args): print a percentage sign
 
-#Compilation Command
+# Compilation Command
 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
-#Requirements
+# Requirements
 
 Editor: VI
 All files will be compiled on Ubuntu 20.04 LTS.
@@ -25,7 +25,7 @@ Global variables is not allowed.
 Cannot use more than 5 functions per file.
 Prototypes of all functions should be included in a header file called main.h.
 
-#Example
+# Example
 
 _printf("Hello World")
 
