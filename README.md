@@ -1,32 +1,89 @@
-# Project Title
+# _printf() - Function C
 
-_PRINTF: In this project, we are creating a function called _printf. It works like the function printf on the <stdio.h> library.
+In this project, we are creating a function called `_printf()`.
 
-# Description
+This function formats a character string and returns it to the terminal output.
+When the function completes correctly, it returns the number of characters printed.
 
-We dissect the function in 4 subfunctions:
+It works like the function `printf()` on the `<stdio.h>` library.
 
-int _print_char(va_list args): print a char
-int _print_integer(va_list args): print an integer
-int _print_string(va_list args): print a string
-int _print_perc(va_list args): print a percentage sign
+## Requirements
+- Ubuntu `20.04 LTS`
+- GCC Language standard `gnu89`
 
-# Compilation Command
+## Way to Install Requirements
+Installation gcc
+```bash
+$ sudo apt install build-essential
+```
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+## Installation
+```bash
+$ git clone https://github.com/jydzip/holbertonschool-printf.git
+$ cd holbertonschool-printf
+```
 
-# Requirements
+## Compilation and run
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c -o _printf
+$ ./_printf
+```
 
-Editor: VI
-All files will be compiled on Ubuntu 20.04 LTS.
-A README.md file, at the root of the folder of the project is mandatory.
-Code is using the Betty syle.
-Global variables is not allowed.
-Cannot use more than 5 functions per file.
-Prototypes of all functions should be included in a header file called main.h.
+## Format Specifiers
+| Function name  | Description          | Format |
+| :---------------: |:---------------:| :-----:|
+| [_print_char](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_char.c)  | Print a single character | `%c` |
+| [_print_string](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_string.c) | Print a string of characters | `%s` |
+| [_print_integer](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_integer.c) | Print an integer | `%i` |
+| [_print_perc](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_perc.c) | Print a percentage | `%%` |
+| [_print_unsigned_integer](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_unsigned_integer.c) | Print a unsigned integer | `%u` |
+| [_print_binary](https://github.com/jydzip/holbertonschool-printf/blob/main/_print_binary.c) | Print a integer converted to binary | `%b` |
 
-# Example
+## Usage/Examples
+Exemple of `main.c` for use `_printf()`
+```c
+#include "main.h"
 
-_printf("Hello World")
+int main() {
+    int number = 10;
+    int number2 = 105;
+    char character = 'A';
+    char string[] = "Hello, world!";
+    int len;
 
-stdout: Hello World
+    len = _printf("Display string : %s\n", string);
+    _printf("Length of string displayed : %d\n", len);
+    _printf("Display integer : %d\n", number);
+    _printf("Display character : %c\n", character);
+    _printf("Display percentage : %%\n");
+    _printf("Display unsigned int : %u\n", number);
+    _printf("Display binary : %b\n", number2);
+
+    return (0);
+}
+```
+#### STDOUT:
+```c
+Display string : Hello, world!
+Length of string displayed : 31
+Display integer : 10
+Display character : A
+Display percentage : %
+Display unsigned int : 10
+Display binary : 1101001
+```
+## Running Tests
+To run tests, use the `main.c` of the `Usage/Examples` part.
+
+And run the command:
+```bash
+$ ./main_tests.sh
+```
+
+## Flowchart
+![Flowchart](https://i.ibb.co/PxBcCZw/Printf-Flowchart-drawio.png)
+
+## Authors
+- [Edouard26](https://github.com/Edouard26)
+
+- [Jydzip](https://github.com/jydzip)
