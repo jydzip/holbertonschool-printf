@@ -1,13 +1,11 @@
 #include <stdarg.h>
 #include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
  * _print_integer - print integers
  * @args: arguments of the function
- * Return: count
+ * Return: length characters printed
  */
 
 int _print_integer(va_list args)

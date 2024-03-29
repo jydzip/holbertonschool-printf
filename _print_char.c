@@ -4,7 +4,7 @@
 
 /**
  * _print_char - print a character
- * @args: int
+ * @args: arguments of the function
  * Return: 1
  */
 

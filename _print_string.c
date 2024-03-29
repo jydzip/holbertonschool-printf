@@ -4,8 +4,8 @@
 
 /**
  * _print_string - print a string of characters
- * @args: char
- * Return: count
+ * @args: arguments of the function
+ * Return: length characters plength characters printedrinted
  */
 
 int _print_string(va_list args)

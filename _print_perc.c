@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
 /**
  * _print_perc - print a %
- * @args: args
+ * @args: arguments of the function
  * Return: 1
  */
 

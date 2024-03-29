@@ -1,6 +1,11 @@
 #include <stdarg.h>
 #include "main.h"
 
+/**
+ * _print_binary - print a integer converted to binary
+ * @args: arguments of the function
+ * Return: length characters printed 
+ */
 int _print_binary(va_list args)
 {
 	unsigned int n = va_arg(args, unsigned int); 

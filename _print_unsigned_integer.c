@@ -4,7 +4,7 @@
 /**
  * _print_unsigned_integer - print unsigned integers
  * @args: arguments of the function
- * Return: count
+ * Return: length characters printed
  */
 
 int _print_unsigned_integer(va_list args)
@@ -29,7 +29,7 @@ int _print_unsigned_integer(va_list args)
  * __print_unsigned_integer - recursion of the first function
  *@nb: number
  *@count: number to count
- *Return: count
+ *Return: length characters printed
  */
 
 int __print_unsigned_integer(unsigned int nb, int count)
