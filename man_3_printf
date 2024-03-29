@@ -3,46 +3,73 @@
 .B _printf
 - Print formatted output to stdout.
 .SH SYNOPSIS
+#include "main.h"
+.sp
 int _printf(const char *format, ...);
 .SH DESCRIPTION
-The _printf() function is used to print formatted output to the standard output (stdout) stream.
-It formats and prints the optional arguments according to the specified format string.
+.B _printf()
+function is used to print formatted output to the standard output (stdout) stream.
+Interpreting
+.B ‘%’
+, it formats and prints the optional arguments according to the specified format string.
 .SH CONVERSION SPECIFIERS
-%c - Character format
+.B %c
+- Character format
 .sp
-%s - String format
+.B %s
+ - String format
 .sp
-%i - Integer format
+.B %i
+ - Integer format
 .sp
-%d - Decimal format
+.B %d
+ - Decimal format
+.sp
+.B %u
+ - Unsigned Integer format
+.sp
+.B %b
+ - Integer converted to binary format
 .Pp
 .SH RETURN VALUE
 .Bl
-Upon successful completion, '_printf' returns the number of characters printed (excluding the null byte used to end output to strings).
-If an error occurs, a negative value is returned.
+.B _printf
+returns the number of printed characters.
 .SH EXAMPLES
-To print character:
+.B To print character format:
 .sp
 .RS
 _printf("%c\n", 'A');
 .RE
 .sp
-To print string:
+.B To print string format:
 .sp
 .RS
-_printf("%s\n", "Hello");
+_printf("%s\n", "Hello, world!");
 .RE
 .sp
-To print integer:
+.B To print integer or decimal format:
 .sp
 .RS
 _printf("%i\n", 10);
-.RE
 .sp
-To print decimal:
-.sp
-.RS
 _printf("%d\n", 10);
 .RE
+.sp
+.B To print unsigned integer format:
+.sp
+.RS
+_printf("%u\n", 10);
+.RE
+.sp
+.B To print integer converted to binary format:
+.sp
+.RS
+_printf("%b\n", 105);
+.RE
 .SH SEE ALSO
-.I printf(3)
+.I printf(3),
+.I write(1)
+.SH AUTHOR
+.I Edouard H. ~
+.I Jeremy D.
