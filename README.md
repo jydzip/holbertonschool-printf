@@ -81,7 +81,9 @@ $ ./main_tests.sh
 ```
 
 ## Flowchart
-![Flowchart](https://i.ibb.co/PxBcCZw/Printf-Flowchart-drawio.png)
+![Flowchart](https://raw.githubusercontent.com/jydzip/holbertonschool-printf/main/flowchart_printf.png)
+
+- [Draw.io Visual online](https://drive.google.com/file/d/1bbmZoiwZpxJvjHjdXGxMmVAZxKR1Gzwt/view?usp=sharing)
 
 ## Authors
 - [Edouard26](https://github.com/Edouard26)
